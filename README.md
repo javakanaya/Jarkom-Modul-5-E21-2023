@@ -406,6 +406,9 @@ Perintah iptables untuk mengkonfigurasi tabel NAT.
 - ```-s 10.47.0.0/20```: Menentukan alamat sumber yang akan di-NAT, dalam hal ini, semua paket yang berasal dari subnet 10.47.0.0/20.
 
 **Hasil**:
+![WhatsApp Image 2023-12-18 at 21 25 10_d4414fd6](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/27f9cd0c-70d3-443a-82f1-57fe50b06844)
+![WhatsApp Image 2023-12-18 at 21 25 49_f80d4b6b](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/904de119-c0e8-48cb-bc29-ebb1369012c8)
+
 
 ### Soal 2
 > Kalian diminta untuk melakukan drop semua TCP dan UDP kecuali port 8080 pada TCP.
