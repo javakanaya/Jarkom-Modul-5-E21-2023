@@ -453,7 +453,13 @@ iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j
 - ```--connlimit-mask 0```: Menyatakan bahwa pembatasan berlaku untuk semua alamat IP.
 - ```-j REJECT```: Menolak koneksi jika melebihi batas yang ditentukan.
 
-**Hasil**:
+**Hasil**: \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/5e6dbd0e-98c2-4630-ac21-7d7333c3d857)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/a9befce6-19c8-4dbb-8a1c-3b7231fef9bb)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/b275fbfc-510f-44c7-a5b0-7d99a31b6e9a)
+Ketika client ke 4 mencoba ping DHCP Server
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/d2ecda7e-6e91-41f4-b2d1-e7a1917ac2dd)
+
 ### Soal 4
 > Lakukan pembatasan sehingga koneksi SSH pada Web Server hanya dapat dilakukan oleh masyarakat yang berada pada GrobeForest.
 ```
@@ -477,7 +483,10 @@ Perintah tersebut digunakan untuk menolak koneksi SSH dari sumber lainnya
 - ```-j REJECT```: Menolak koneksi SSH selain dari GrobeForest.
 
 
-**Hasil**:
+**Hasil**: \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/72fc31ff-0583-4b23-a923-2fef956f9c4c)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/acd32b3a-5287-489a-a0e2-e9495afed61d)
+
 ### Soal 5
 > Selain itu, akses menuju WebServer hanya diperbolehkan saat jam kerja yaitu Senin-Jumat pada pukul 08.00-16.00.
 ```
@@ -501,7 +510,15 @@ Perintah tersebut digunakan untuk menolak akses ke Web Server di luar jam kerja
 - ```-j ACCEPT```: Menerima akses pada jam kerja yang telah ditentukan.
 - ```-j REJECT```: Menolak akses.
 
-**Hasil**:
+**Hasil**: \
+Dengan waktu yang tidak sesuai \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/4d070928-f2f1-42a7-82e0-91cdbca62b53)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/f8288705-dd25-4f87-8dc4-cde7f8b5182e) \
+Dengan Waktu yang sesuai \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/14e32f47-a114-4c78-b422-fe29c19040b3)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/0049860f-c808-4611-aed8-0ca96f8ee14c)
+
+
 ### Soal 6
 > Lalu, karena ternyata terdapat beberapa waktu di mana network administrator dari WebServer tidak bisa stand by, sehingga perlu ditambahkan rule bahwa akses pada hari Senin - Kamis pada jam 12.00 - 13.00 dilarang (istirahat maksi cuy) dan akses di hari Jumat pada jam 11.00 - 13.00 juga dilarang (maklum, Jumatan rek).
 ```
