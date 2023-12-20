@@ -626,5 +626,25 @@ Menyetel alamat IP yang melakukan scanning port (FORWARD): ```iptables -A FORWAR
 **Hasil**:
 ### Soal 10
 > Karena kepala suku ingin tau paket apa saja yang di-drop, maka di setiap node server dan router ditambahkan logging paket yang di-drop dengan standard syslog level. 
-**Penjelasan**:
+**Penjelasan**: \
+Untuk menyelesaikan soal nomor 10 dapat digunakan syntax berikut:
+
+`iptables -A INPUT  -j LOG --log-level debug --log-prefix 'Dropped Packet' -m limit --limit 1/second --limit-burst 10`
+Berikut adalah penjelasan dari bagian pada syntax tersebut:
+
+`-A INPUT`: Menambahkan aturan ke chain INPUT.
+
+`-j LOG`: Menunjukkan bahwa aksi yang akan diambil adalah log. Ketika paket mencocokkan aturan ini dan ditolak, informasi tentang paket tersebut akan dicatat dalam log sistem.
+
+`--log-level debug`: Menentukan level log yang akan digunakan. Dalam hal ini, level log adalah "debug", yang berarti log akan mencatat informasi lebih rinci.
+
+`--log-prefix 'Dropped Packet'`: Menetapkan prefix atau awalan untuk setiap entri log. Dalam hal ini, pesan log akan dimulai dengan teks "Dropped Packet".
+
+`-m limit --limit 1/second --limit-burst 10`: Menggunakan modul "limit" untuk mengatur batasan pada jumlah log yang akan dicatat.
+
+`--limit 1/second`: Menetapkan batasan sebanyak satu log per detik.
+
+`--limit-burst 10`: Menetapkan batasan burst, yaitu jumlah log yang dapat dilakukan dalam satu waktu sebelum batasan per detik diambil kembali.
+
+Pada list iptables tersebut terdapat rules untuk membuat log sehingga dapat dilihat paket yang telah didrop.
 **Hasil**:
