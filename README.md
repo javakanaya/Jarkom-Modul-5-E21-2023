@@ -437,7 +437,12 @@ Perintah tersebut digunakan untuk menolak semua koneksi UDP:
 - ```-p udp```: Menentukan protokol UDP.
 - ```-j DROP```: Menolak semua koneksi UDP.
 
-**Hasil**:
+**Hasil**: \
+![WhatsApp Image 2023-12-20 at 20 56 26_abe09446](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/92eb482f-9095-43c0-adb7-d8133f91b7d7)
+![WhatsApp Image 2023-12-20 at 20 56 40_cc846373](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/8a8f1f4a-d588-4979-89ad-d70276589c8d)
+![WhatsApp Image 2023-12-20 at 20 57 06_7f80f35e](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/9285a9b5-c972-4917-99bc-53a818722aad)
+![WhatsApp Image 2023-12-20 at 20 57 17_5c426d53](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/3e0a94ab-5644-4c1d-b640-fa936ab47d1f)
+
 
 ### Soal 3
 > Kepala Suku North Area meminta kalian untuk membatasi DHCP dan DNS Server hanya dapat dilakukan ping oleh maksimal 3 device secara bersamaan, selebihnya akan di drop.
@@ -542,7 +547,13 @@ Perintah tersebut digunakan untuk menolak akses pada hari Senin-Kamis pada jam 1
 - ```--weekdays Mon,Tue,Wed,Thu ```: Menentukan hari Senin-Kamis.
 - ```-j REJECT```: Menolak akses pada waktu yang ditentukan.
 
-**Hasil**:
+**Hasil**: \
+pada hari biasa \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/092d29b9-a240-44ff-adfa-ee8e35b01001)
+pada hari jumat \ 
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/ff0f2960-7a6e-4ebc-b522-d75ea618ef2a)
+
+
 ### Soal 7
 > Karena terdapat 2 WebServer, kalian diminta agar setiap client yang mengakses Sein dengan Port 80 akan didistribusikan secara bergantian pada Sein dan Stark secara berurutan dan request dari client yang mengakses Stark dengan port 443 akan didistribusikan secara bergantian pada Sein dan Stark secara berurutan.
 ```
@@ -578,7 +589,10 @@ Perintah tersebut digunakan untuk distribusi koneksi HTTPS (Port 443) pada Sein 
 - ```-j DNAT --to-destination```: Mengubah alamat tujuan koneksi (DNAT).
 - ```10.47.4.2``` dan ```10.47.0.10```: Alamat IP destinasi Sein dan Stark.
 
-**Hasil**:
+**Hasil**: \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/341fdf84-80d7-4b5b-b00e-3f073a76d94c)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/cc77ca79-3fd4-45f8-86c9-6c575d9c7909)
+
 ### Soal 8
 > Karena berbeda koalisi politik, maka subnet dengan masyarakat yang berada pada Revolte dilarang keras mengakses WebServer hingga masa pencoblosan pemilu kepala suku 2024 berakhir. Masa pemilu (hingga pemungutan dan penghitungan suara selesai) kepala suku bersamaan dengan masa pemilu Presiden dan Wakil Presiden Indonesia 2024.
 ```
@@ -593,7 +607,20 @@ iptables -A INPUT -p tcp --dport 80 -s 10.47.0.20/30 -m time --datestart 2023-12
 - ```-m time --datestart 2023-12-11 --datestop 2024-02-15```: Menggunakan modul time untuk menentukan rentang waktu pemilu kepala suku 2024, dimulai dari 11 Desember 2023 hingga 15 Februari 2024.
 - ```-j DROP```: Menolak akses HTTP selama rentang waktu pemilu kepala suku 2024.
 
-**Hasil**:
+**Hasil**: \
+Pada Revolte (Fri Dec 22 08:03:45 UTC 2023) \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/4f48b5cb-c7c3-40a5-b2b2-16e1d1202da5)
+Pada TurkRegion (Fri Dec 22 08:03:45 UTC 2023) \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/ddbd0e2e-acf7-4486-8eff-702e1bee05b4)
+============================================== \
+Pada Revolte (Wed Feb 14 09:00:00 UTC 2024) \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/e527f48a-988d-4827-94a7-67e062b5261d)
+Pada TurkRegion (Wed Feb 14 09:00:00 UTC 2024) \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/04116877-d186-415e-a9c5-c7632b199cbe)
+============================================== \
+Pada Revolte (Wed Feb 16 09:00:00 UTC 2024) \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/4726f3a7-3c38-46aa-b4ee-842edd7e93e5)
+
 ### Soal 9
 > Sadar akan adanya potensial saling serang antar kubu politik, maka WebServer harus dapat secara otomatis memblokir alamat IP yang melakukan scanning port dalam jumlah banyak (maksimal 20 scan port) di dalam selang waktu 10 menit. (clue: test dengan nmap)
 ```
@@ -623,11 +650,17 @@ Menyetel alamat IP yang melakukan scanning port (FORWARD): ```iptables -A FORWAR
 - ```-A INPUT -m recent --name scan_port --set -j ACCEPT```: Menyetel alamat IP yang melakukan scanning port pada rantai INPUT agar diizinkan.
 - ```-A FORWARD -m recent --name scan_port --set -j ACCEPT```: Menyetel alamat IP yang melakukan scanning port pada rantai FORWARD agar diizinkan.
 
-**Hasil**:
+**Hasil**: \
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/33d274a0-3b8c-4dc5-ab45-649ada8366f8)
+
 ### Soal 10
 > Karena kepala suku ingin tau paket apa saja yang di-drop, maka di setiap node server dan router ditambahkan logging paket yang di-drop dengan standard syslog level. 
 **Penjelasan**: \
 Untuk menyelesaikan soal nomor 10 dapat digunakan syntax berikut:
+
+```bash
+iptables -A INPUT  -j LOG --log-level debug --log-prefix 'Dropped Packet' -m limit --limit 1/second --limit-burst 10
+```
 
 `iptables -A INPUT  -j LOG --log-level debug --log-prefix 'Dropped Packet' -m limit --limit 1/second --limit-burst 10`
 Berikut adalah penjelasan dari bagian pada syntax tersebut:
@@ -647,4 +680,6 @@ Berikut adalah penjelasan dari bagian pada syntax tersebut:
 `--limit-burst 10`: Menetapkan batasan burst, yaitu jumlah log yang dapat dilakukan dalam satu waktu sebelum batasan per detik diambil kembali.
 
 Pada list iptables tersebut terdapat rules untuk membuat log sehingga dapat dilihat paket yang telah didrop.
-**Hasil**:
+**Hasil**: \
+![Screenshot 2023-12-20 212111](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/c36eb307-151b-4173-8343-c7d9932bebf6)
+
