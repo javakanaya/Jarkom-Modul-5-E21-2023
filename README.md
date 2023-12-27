@@ -8,8 +8,12 @@ Laporan Resmi Praktikum Jaringan Komputer Modul 5
 - [Java Kanaya Prada](https://github.com/javakanaya) - 5025211112
 
 ## Topologi
+<img width="627" alt="Jarkom Modul 5 Topologi" src="https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/87474722/5a6e69c7-523c-4452-a91b-e831b22cad6c">
 
 ## Pembagian Subnet
+<img width="753" alt="Pembagian Subnetting " src="https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/87474722/e9642608-3cf0-4a60-91ff-798c967779c4">
+
+<img width="1474" alt="Table Sbnet" src="https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/87474722/cdfeb637-7f74-4c16-824c-a79f1ed32f63">
 
 ## *Network Configuration*
 ### Aura (Router)
@@ -462,7 +466,9 @@ iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j
 ![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/5e6dbd0e-98c2-4630-ac21-7d7333c3d857)
 ![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/a9befce6-19c8-4dbb-8a1c-3b7231fef9bb)
 ![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/b275fbfc-510f-44c7-a5b0-7d99a31b6e9a)
+
 Ketika client ke 4 mencoba ping DHCP Server
+
 ![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/d2ecda7e-6e91-41f4-b2d1-e7a1917ac2dd)
 
 ### Soal 4
@@ -548,9 +554,12 @@ Perintah tersebut digunakan untuk menolak akses pada hari Senin-Kamis pada jam 1
 - ```-j REJECT```: Menolak akses pada waktu yang ditentukan.
 
 **Hasil**: \
-pada hari biasa \
-![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/092d29b9-a240-44ff-adfa-ee8e35b01001)
-pada hari jumat \ 
+pada hari biasa
+
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/092d29b9-a240-44ff-adfa-ee8e35b01001) 
+
+pada hari jumat 
+
 ![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/ff0f2960-7a6e-4ebc-b522-d75ea618ef2a)
 
 
@@ -609,17 +618,17 @@ iptables -A INPUT -p tcp --dport 80 -s 10.47.0.20/30 -m time --datestart 2023-12
 
 **Hasil**: \
 Pada Revolte (Fri Dec 22 08:03:45 UTC 2023) \
-![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/4f48b5cb-c7c3-40a5-b2b2-16e1d1202da5)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/4f48b5cb-c7c3-40a5-b2b2-16e1d1202da5) \
 Pada TurkRegion (Fri Dec 22 08:03:45 UTC 2023) \
-![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/ddbd0e2e-acf7-4486-8eff-702e1bee05b4)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/ddbd0e2e-acf7-4486-8eff-702e1bee05b4) \
 ============================================== \
 Pada Revolte (Wed Feb 14 09:00:00 UTC 2024) \
-![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/e527f48a-988d-4827-94a7-67e062b5261d)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/e527f48a-988d-4827-94a7-67e062b5261d) \
 Pada TurkRegion (Wed Feb 14 09:00:00 UTC 2024) \
-![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/04116877-d186-415e-a9c5-c7632b199cbe)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/04116877-d186-415e-a9c5-c7632b199cbe) \
 ============================================== \
 Pada Revolte (Wed Feb 16 09:00:00 UTC 2024) \
-![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/4726f3a7-3c38-46aa-b4ee-842edd7e93e5)
+![image](https://github.com/javakanaya/Jarkom-Modul-5-E21-2023/assets/27951856/4726f3a7-3c38-46aa-b4ee-842edd7e93e5) \
 
 ### Soal 9
 > Sadar akan adanya potensial saling serang antar kubu politik, maka WebServer harus dapat secara otomatis memblokir alamat IP yang melakukan scanning port dalam jumlah banyak (maksimal 20 scan port) di dalam selang waktu 10 menit. (clue: test dengan nmap)
